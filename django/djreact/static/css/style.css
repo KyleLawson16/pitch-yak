@@ -1,0 +1,151 @@
+.iframe-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.iframe-container iframe {
+  position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+  min-height: 100%;
+	border: none;
+}
+
+.video-form-container {
+  text-align:center;
+	border: none;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+  width: 100%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iframe-form-container {
+  position:relative;
+	padding-bottom:56.25%;
+	padding-top:0px;
+	border: none;
+  width: 100%;
+	height:0;
+	overflow:auto;
+	-webkit-overflow-scrolling:touch;
+}
+
+.iframe-form-container iframe {
+  position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+  min-height: 100%;
+	border: none;
+}
+
+.form-container {
+  position:absolute;
+  bottom: 0;
+	width:100%;
+  height: auto;
+}
+
+.form-container-full {
+  height: 100%;
+  top: 0;
+	margin-top:0px;
+}
+
+.email-capture-form {
+  width:100%;
+	border: none;
+  background-color: rgba(0,0,0,0.65);
+	z-index:2;
+	top:0;
+	left:0;
+}
+
+.email-capture-form-full {
+  height:100%;
+}
+
+.form-title-text {
+  text-align:center;
+	font-size:18px;
+	color:#fff;
+	padding-top:20px;
+}
+
+.form-title-text-full {
+  font-size: 16px;
+  padding-top: 21.5%;
+}
+
+.email-capture-form .form-email-input {
+  margin-top:20px;
+	padding-left:5px;
+	width:250px;
+	height:35px;
+	border-radius:5px;
+	background-color:#fff;
+	border:none;
+	margin-right:10px;
+	font-size:15px;
+  text-align: left;
+  line-height: 15px;
+  margin-bottom: 30px;
+}
+
+.form-submit-btn {
+  margin-top:20px;
+	width:120px;
+	height:35px;
+	border-radius:5px;
+	border:none;
+	color:#fff;
+  background-color: #78caff;
+	font-size:15px;
+  line-height: 15px;
+  padding: 0px 0px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  margin-bottom: 30px;
+}
+
+.form-submit-btn:hover {
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+  background-color: #31a5f0;
+}
+
+.form-skip-btn {
+  color: #ffffff;
+}
+
+.form-skip-btn-half {
+  margin-top: 20px;
+  display: inline-block;
+  height: 35px;
+  line-height: 40px;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.form-skip-btn-full {
+  padding-top: 10%;
+}
+
+.form-skip-btn:hover {
+  text-decoration: underline;
+}
+
+.form-branding {
+  width: 140px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	margin-bottom: 0px;
+}
