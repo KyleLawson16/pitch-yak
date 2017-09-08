@@ -27,7 +27,7 @@ class PitchNew extends Component {
 
   onSubmit(values) {
     this.props.createPitch(values, () => {
-      this.props.history.push('/');
+      this.props.history.push('/pitches');
     });
   }
 
@@ -48,7 +48,7 @@ class PitchNew extends Component {
           component={this.renderField}
         />
         <button type="submit" className="btn btn-primary">Submit</button>
-        <Link className="btn btn-danger" to="/">
+        <Link className="btn btn-danger" to="/pitches">
           Cancel
         </Link>
       </form>

@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^api/', include("pitches.api.urls", namespace='api')),
     url(r'^view2/',
       generic.TemplateView.as_view(template_name='view2.html')),
-    url(r'^',
+    url(r'^pitches/',
       generic.TemplateView.as_view(template_name='view1.html')),
 
 

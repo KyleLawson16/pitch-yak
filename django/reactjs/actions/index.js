@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "csrftoken";
+
 export const FETCH_PITCHES = 'fetch_pitches';
 export const CREATE_PITCH = 'create_pitch';
 
@@ -15,7 +18,7 @@ export function fetchPitches(id) {
 }
 
 export function createPitch(values, callback) {
-  const request = axios.post(`${ROOT_URL}/create`, values)
+  const request = axios.post(`${ROOT_URL}/create/`, values)
     .then(() => callback());
 
   return {

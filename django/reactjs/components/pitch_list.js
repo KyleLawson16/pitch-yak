@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 import { fetchPitches } from '../actions';
+import PitchListItem from './pitch_list_item';
 
 class PitchList extends Component {
+
+
   componentDidMount() {
     this.props.fetchPitches();
   }
@@ -14,12 +17,12 @@ class PitchList extends Component {
   renderPitches() {
     return _.map(this.props.pitches, pitch => {
       return (
-        <li key={pitch.id}>
-          {pitch.title}
-        </li>
+        <PitchListItem id={pitch.id} title={pitch.title} />
       );
     });
   }
+
+
 
   render() {
 
@@ -29,7 +32,7 @@ class PitchList extends Component {
         <ul>
         {this.renderPitches()}
         </ul>
-        <Link className="btn btn-primary" to="/new">
+        <Link className="btn btn-primary" to="/pitches/new">
           Add Pitch
         </Link>
       </div>

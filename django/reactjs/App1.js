@@ -16,9 +16,9 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/new" component={PitchNew} />
-          <Route exact path="/" component={PitchList} />
-          
+          <Route exact path="/pitches/new" component={PitchNew} />
+          <Route exact path="/pitches" component={PitchList} />
+
         </Switch>
       </div>
     </BrowserRouter>
