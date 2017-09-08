@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Card, Header, Icon } from 'semantic-ui-react';
 
 class PitchListItem extends Component {
   constructor(props) {
@@ -24,12 +25,26 @@ class PitchListItem extends Component {
 
   render() {
     return (
-      <li key={this.props.id}>
-        {this.props.title}
-        <button onClick={this.upVote} className="btn btn-primary">Like</button>
-        <button onClick={this.downVote} className="btn btn-danger">Like</button>
-        <p>{this.state.count}</p>
-      </li>
+      <Card fluid key={this.props.id}>
+        <Card.Content>
+        <Button.Group floated='right'>
+        <Header as='h2'>{this.state.count}</Header>
+        <Button.Group vertical>
+          <Button icon onClick={this.upVote}>
+            <Icon name='chevron up' />
+          </Button>
+          <Button icon onClick={this.downVote}>
+            <Icon name='chevron down' />
+          </Button>
+          </Button.Group>
+        </Button.Group>
+          <Card.Header>{this.props.title}</Card.Header>
+          <Card.Description>
+            {this.props.pitch}
+
+          </Card.Description>
+        </Card.Content>
+      </Card>
     );
   };
 }

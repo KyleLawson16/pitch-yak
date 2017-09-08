@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import { Card } from 'semantic-ui-react';
 
 import { fetchPitches } from '../actions';
 import PitchListItem from './pitch_list_item';
@@ -17,7 +18,7 @@ class PitchList extends Component {
   renderPitches() {
     return _.map(this.props.pitches, pitch => {
       return (
-        <PitchListItem id={pitch.id} title={pitch.title} />
+        <PitchListItem id={pitch.id} title={pitch.title} pitch={pitch.pitch} />
       );
     });
   }
@@ -29,9 +30,9 @@ class PitchList extends Component {
     return (
       <div>
         <h1>List of Pitches</h1>
-        <ul>
+        <Card.Group>
         {this.renderPitches()}
-        </ul>
+        </Card.Group>
         <Link className="btn btn-primary" to="/pitches/new">
           Add Pitch
         </Link>
