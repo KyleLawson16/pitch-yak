@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 import { fetchPitches } from '../actions';
@@ -28,6 +29,9 @@ class PitchList extends Component {
         <ul>
         {this.renderPitches()}
         </ul>
+        <Link className="btn btn-primary" to="/new">
+          Add Pitch
+        </Link>
       </div>
     );
   };

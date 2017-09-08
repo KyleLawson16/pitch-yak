@@ -7,6 +7,7 @@ import promise from 'redux-promise';
 
 import reducers from './reducers';
 import PitchList from './components/pitch_list';
+import PitchNew from './components/pitch_new';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -15,7 +16,9 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
+          <Route exact path="/new" component={PitchNew} />
           <Route exact path="/" component={PitchList} />
+          
         </Switch>
       </div>
     </BrowserRouter>

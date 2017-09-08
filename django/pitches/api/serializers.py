@@ -24,6 +24,14 @@ class PitchListSerializer(ModelSerializer):
             'dislikes',
         ]
 
+class PitchCreateUpdateSerializer(ModelSerializer):
+    class Meta:
+        model = Pitch
+        fields = [
+            'title',
+            'pitch',
+        ]
+
 class PitchDetailSerializer(ModelSerializer):
     user = SerializerMethodField()
     class Meta:

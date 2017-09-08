@@ -20,6 +20,7 @@ from pitches.models import Pitch
 
 from .serializers import (
     PitchListSerializer,
+    PitchCreateUpdateSerializer,
     PitchDetailSerializer,
 )
 
@@ -27,6 +28,16 @@ from .serializers import (
 class PitchListAPIView(ListAPIView):
     serializer_class = PitchListSerializer
     queryset = Pitch.objects.all()
+
+class PitchCreateAPIView(CreateAPIView):
+    queryset = Pitch.objects.all()
+    serializer_class = PitchCreateUpdateSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(
+            user=self.request.user,
+        )
 
 class PitchDetailAPIView(RetrieveAPIView):
     queryset = Pitch.objects.all()
