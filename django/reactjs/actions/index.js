@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-export const FETCH_VIDEO = 'fetch_video';
+export const FETCH_PITCHES = 'fetch_pitches';
 
-const ROOT_URL = 'https://www.googleapis.com';
-const API_KEY = '?key=AIzaSyAI8niheRLYsF75iVAriiwLfs4tWT8GUUM';
+const ROOT_URL = 'http://localhost:8000/api';
 
-export function fetchVideo(id) {
-  const request = axios.get(`${ROOT_URL}/youtube/v3/videos${API_KEY}&part=snippet&id=${id}`);
+export function fetchPitches(id) {
+  const request = axios.get(`${ROOT_URL}`);
 
   return {
-    type: FETCH_VIDEO,
+    type: FETCH_PITCHES,
     payload: request
   };
 }

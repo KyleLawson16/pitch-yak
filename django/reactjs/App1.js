@@ -6,10 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import reducers from './reducers';
-import VideoCustomize from './components/video_customize';
-import VideoEmailCapture from './components/video_email_capture';
-import VideoEmailCaptureEdit from './components/video_email_capture_customize';
-import VideoSearch from './components/video_search';
+import PitchList from './components/pitch_list';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -18,10 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/" component={VideoSearch} />
-          <Route exact path="/:id" component={VideoCustomize} />
-          <Route exact path="/:id/email-capture" component={VideoEmailCapture} />
-          <Route path="/:id/email-capture/edit" component={VideoEmailCaptureEdit} />
+          <Route exact path="/" component={PitchList} />
         </Switch>
       </div>
     </BrowserRouter>
