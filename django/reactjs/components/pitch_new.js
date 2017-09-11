@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createPitch } from '../actions';
 import { compose, defaultProps } from "recompose";
+import { Grid } from 'semantic-ui-react';
 
 class PitchNew extends Component {
 
@@ -36,22 +37,26 @@ class PitchNew extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <Field
-          label="Title"
-          name="title"
-          component={this.renderField}
-        />
-        <Field
-          label="Pitch"
-          name="pitch"
-          component={this.renderField}
-        />
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <Link className="btn btn-danger" to="/pitches">
-          Cancel
-        </Link>
-      </form>
+      <Grid centered>
+        <Grid.Column width={8}>
+          <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+            <Field
+              label="Title"
+              name="title"
+              component={this.renderField}
+            />
+            <Field
+              label="Pitch"
+              name="pitch"
+              component={this.renderField}
+            />
+            <button type="submit" className="btn btn-primary">Submit</button>
+            <Link className="btn btn-danger" to="/pitches">
+              Cancel
+            </Link>
+          </form>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

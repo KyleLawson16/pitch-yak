@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import { Card } from 'semantic-ui-react';
+import { Button, Card, Container, Grid } from 'semantic-ui-react';
 
 import { fetchPitches } from '../actions';
 import PitchListItem from './pitch_list_item';
@@ -28,15 +28,19 @@ class PitchList extends Component {
   render() {
 
     return (
-      <div>
-        <h1>List of Pitches</h1>
-        <Card.Group>
-        {this.renderPitches()}
-        </Card.Group>
-        <Link className="btn btn-primary" to="/pitches/new">
-          Add Pitch
-        </Link>
-      </div>
+      <Container>
+      <Grid centered>
+        <Grid.Column width={10}>
+          <h1>Pitch Yak</h1>
+          <Card.Group>
+          {this.renderPitches()}
+          </Card.Group>
+          <Link to="/pitches/new">
+            <Button size="large" inverted color='green'>Add Pitch</Button>
+          </Link>
+        </Grid.Column>
+      </Grid>
+      </Container>
     );
   };
 }

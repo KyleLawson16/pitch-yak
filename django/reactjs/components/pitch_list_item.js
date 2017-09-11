@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, Header, Icon } from 'semantic-ui-react';
+import { Button, Card, Grid, Header, Icon, Item } from 'semantic-ui-react';
 
 class PitchListItem extends Component {
   constructor(props) {
@@ -27,22 +27,23 @@ class PitchListItem extends Component {
     return (
       <Card fluid key={this.props.id}>
         <Card.Content>
-        <Button.Group floated='right'>
-        <Header as='h2'>{this.state.count}</Header>
-        <Button.Group vertical>
-          <Button icon onClick={this.upVote}>
-            <Icon name='chevron up' />
-          </Button>
-          <Button icon onClick={this.downVote}>
-            <Icon name='chevron down' />
-          </Button>
-          </Button.Group>
-        </Button.Group>
-          <Card.Header>{this.props.title}</Card.Header>
-          <Card.Description>
-            {this.props.pitch}
-
-          </Card.Description>
+          <Grid>
+            <Grid.Column width={12}>
+              <Header as='h2'>{this.props.title}</Header>
+              {this.props.pitch}
+            </Grid.Column>
+            <Grid.Column width={4} textAlign="right">
+              <Header as='h3'>Votes: {this.state.count}</Header>
+              <Button.Group vertical floated="right">
+                <Button icon onClick={this.upVote}>
+                  <Icon name='chevron up' />
+                </Button>
+                <Button icon onClick={this.downVote}>
+                  <Icon name='chevron down' />
+                </Button>
+              </Button.Group>
+            </Grid.Column>
+          </Grid>
         </Card.Content>
       </Card>
     );
